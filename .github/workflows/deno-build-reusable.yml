@@ -53,13 +53,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-
-      - name: Clear preinstalled Android SDK
-        run: |
-         sudo rm -rf /usr/local/lib/android/sdk
          
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+         accept-android-sdk-licenses: true
 
       - name: Install required Android SDK components
         run: |
